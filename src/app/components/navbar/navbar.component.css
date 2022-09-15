@@ -1,0 +1,19 @@
+.version {
+  font-size: 0.8rem;
+  color: lightgrey;
+}
+
+.mobileLogout {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .mobileLogout {
+    display: block;
+    color: grey;
+    text-decoration: none;
+  }
+  .mobileLogout:hover {
+    text-decoration: underline;
+  }
+}

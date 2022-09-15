@@ -1,0 +1,83 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4 rightDiv">
+      <div>
+        <h1 class="text-center title mb-5">כבר משתמשים רשומים?</h1>
+        <h4 class="text-center mb-4">
+          התחברו לאתר ותהנו מחווית קניות שעוד לא הכרתם!
+        </h4>
+        <div class="form-group">
+          <button class="btn btn-primary signup" routerLink="/login">
+            התחברות למערכת
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 leftDiv">
+      <div>
+        <h1 class="text-center text-white title whiteTitle">
+          <i class="fa-solid fa-user-plus"></i> הרשמה למערכת
+        </h1>
+      </div>
+      <div class="register container">
+        <form #registerForm="ngForm" (ngSubmit)="submitRegister()" novalidate>
+          <div class="form-group pt-3">
+            <input
+              class="form-control"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="* דואר אלקטרוני"
+              required
+              email
+              [(ngModel)]="user.email"
+              minlength="8"
+              ngModel
+              #email="ngModel"
+            />
+            <small
+              class="text-right mt-1"
+              *ngIf="!email?.valid && (email?.dirty || email?.touched)"
+              style="color: rgb(170, 3, 3)"
+            >
+              <i class="fa-solid fa-circle-exclamation"></i> שדה חובה</small
+            >
+          </div>
+          <div class="form-group pt-3">
+            <input
+              class="form-control"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="* סיסמא"
+              required
+              [(ngModel)]="user.password"
+              minlength="6"
+              ngModel
+              #password="ngModel"
+            />
+            <small
+              class="text-right mt-1"
+              *ngIf="!password?.valid && (password?.dirty || password?.touched)"
+              style="color: rgb(170, 3, 3)"
+            >
+              <i class="fa-solid fa-circle-exclamation"></i> שדה חובה</small
+            >
+            <div class="form-group pt-3">
+              <button
+                [disabled]="!registerForm.valid"
+                class="btn btn-secondary"
+                type="submit"
+              >
+                הרשמה
+              </button>
+            </div>
+            <p class="text-center mt-3 hidden">
+              <a routerLink="/login">כבר רשומים לאתר? לחצו כאן!</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

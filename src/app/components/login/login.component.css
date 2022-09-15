@@ -1,0 +1,101 @@
+html {
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.rightDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #b9b9bb;
+  background-image: linear-gradient(0deg, #b9b9bb 0%, #ffffff 100%);
+}
+
+.leftDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #455a64;
+  background-image: linear-gradient(0deg, #455a64 26%, #818f94 100%);
+  background-image: url("../../../assets/img/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input,
+.btn {
+  width: 40rem;
+}
+
+.signup {
+  width: 25rem;
+}
+
+input {
+  padding: 0.8rem;
+}
+
+.whiteTitle {
+  filter: drop-shadow(0px 3px 2px black);
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.title {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1253px) {
+  input,
+  .btn {
+    width: 34.5rem;
+  }
+
+  .leftDiv {
+    display: none;
+  }
+
+  .rightDiv {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hidden {
+    display: block;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media only screen and (max-width: 769px) {
+    input,
+    .btn {
+      width: 22.5rem;
+    }
+  }
+}

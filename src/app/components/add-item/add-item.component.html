@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="shopping-group">
+  <form #addItem="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <input
+      type="text"
+      id="item"
+      name="item"
+      class="iteminput"
+      placeholder="הוסף מוצר לרשימת הקניות.."
+      [(ngModel)]="item.item"
+      required
+      #itemChecker="ngModel"
+      minlength="2"
+      maxlength="22"
+      #addItem="ngModel"
+    />
+    <button
+      type="submit"
+      class="btn btn-secondary add mx-2"
+      [disabled]="!addItem.valid"
+    >
+      <i class="fa-solid fa-plus"></i> <span class="hidden"> הוסף לרשימה</span>
+    </button>
+    <br />
+    <small
+      *ngIf="!addItem?.valid && (addItem?.dirty || addItem?.touched)"
+      style="color: red"
+    >
+      <i class="fa-solid fa-circle-exclamation mt-2"></i> זהו שדה חובה, אנא הכנס
+      2 תווים לפחות</small
+    >
+  </form>
+</div>
+<app-show-list></app-show-list>

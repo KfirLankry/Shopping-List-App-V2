@@ -1,0 +1,92 @@
+.rightDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #b9b9bb;
+  background-image: linear-gradient(0deg, #b9b9bb 0%, #ffffff 100%);
+}
+
+.leftDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #455a64;
+  background-image: linear-gradient(0deg, #455a64 26%, #818f94 100%);
+  background-image: url("../../../assets/img/bg2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input,
+.btn {
+  width: 40rem;
+}
+
+.whiteTitle {
+  filter: drop-shadow(0px 3px 2px black);
+}
+
+.signup {
+  width: 25rem;
+}
+
+input {
+  background-color: rgb(239, 239, 239);
+  padding: 0.8rem;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 1253px) {
+  input,
+  .btn {
+    width: 34.5rem;
+  }
+
+  .rightDiv {
+    display: none;
+  }
+
+  .leftDiv {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .hidden {
+    display: block;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media only screen and (max-width: 769px) {
+    input,
+    .btn {
+      width: 22.5rem;
+    }
+  }
+}

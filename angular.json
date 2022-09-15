@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -94,8 +95,21 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "ShoppingListV2:build:production",
+            "firebaseProject": "grocery-list-app-a6a59",
+            "firebaseHostingSite": "grocery-list-app-a6a59"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

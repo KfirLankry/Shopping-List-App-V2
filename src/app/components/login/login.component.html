@@ -1,0 +1,95 @@
+<div class="container-fluid">
+  <div class="row main">
+    <div class="col-lg-8 rightDiv">
+      <div>
+        <h1 class="text-center title">
+          <i class="fa-solid fa-user"></i> התחברות למערכת
+        </h1>
+      </div>
+      <div class="register container">
+        <form
+          class="needs-validation"
+          #loginForm="ngForm"
+          (ngSubmit)="submitLogin()"
+          novalidate
+        >
+          <div class="form-group pt-3">
+            <input
+              class="form-control"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="* דואר אלקטרוני"
+              required
+              email
+              [(ngModel)]="user.email"
+              minlength="8"
+              ngModel
+              #email="ngModel"
+            />
+            <small
+              *ngIf="!email?.valid && (email?.dirty || email?.touched)"
+              style="color: red"
+            >
+              <i class="fa-solid fa-circle-exclamation"></i> שדה חובה</small
+            >
+          </div>
+          <div class="form-group pt-3">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-control"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="* סיסמא"
+              required
+              [(ngModel)]="user.password"
+              minlength="6"
+              ngModel
+              #password="ngModel"
+            />
+            <small
+              *ngIf="!password?.valid && (password?.dirty || password?.touched)"
+              style="color: red"
+            >
+              <i class="fa-solid fa-circle-exclamation"></i> שדה חובה</small
+            >
+            <div class="form-group pt-3">
+              <button
+                [disabled]="!loginForm.valid"
+                class="btn btn-secondary"
+                type="submit"
+              >
+                כניסה
+              </button>
+            </div>
+          </div>
+        </form>
+        <hr class="mx-auto w-50 mt-4" />
+        <div class="form-group">
+          <button (click)="submitLoginWithGoogle()" class="btn btn-dark mt-2">
+            התחברות עם גוגל <i class="fa-brands fa-google"></i>
+          </button>
+        </div>
+        <p class="text-center mt-3 hidden">
+          <a routerLink="/register">משתמשים חדשים? לחצו כאן!</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-lg-4 leftDiv">
+      <div>
+        <h1 class="text-center text-white title whiteTitle mb-5">
+          עדיין לא רשומים?
+        </h1>
+        <h4 class="text-center text-white whiteTitle mb-4">
+          הירשמו עכשיו ותהנו מחווית קניות שעוד לא הכרתם!
+        </h4>
+        <div class="form-group">
+          <button class="btn btn-primary signup" routerLink="/register">
+            הירשמו כאן
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

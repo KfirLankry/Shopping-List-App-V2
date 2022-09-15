@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "grocery-list-app-a6a59": {
+      "hosting": {
+        "ShoppingListV2": [
+          "grocery-list-app-a6a59"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "grocery-list-app-a6a59"
+  }
+}

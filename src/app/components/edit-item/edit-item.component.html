@@ -1,0 +1,31 @@
+<h1 class="text-center mt-3">עריכת מוצר</h1>
+<div class="input">
+  <form #editItem="ngForm" (ngSubmit)="updateItem()" novalidate>
+    <input
+      type="text"
+      id="item"
+      name="item"
+      class="iteminput"
+      [(ngModel)]="item.item"
+      required
+      minlength="2"
+      maxlength="22"
+      #edittem="ngModel"
+    />
+    <button
+      type="submit"
+      class="btn btn-secondary btn-size add"
+      [disabled]="!editItem.valid"
+    >
+      ערוך
+    </button>
+    <br />
+    <small
+      *ngIf="!editItem?.valid && (editItem?.dirty || editItem?.touched)"
+      style="color: red"
+    >
+      <i class="fa-solid fa-circle-exclamation mt-2"></i> זהו שדה חובה, אנא הכנס
+      2 אותיות לפחות!</small
+    >
+  </form>
+</div>

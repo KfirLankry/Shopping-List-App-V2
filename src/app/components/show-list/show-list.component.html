@@ -1,0 +1,68 @@
+<!-- Condition to show items for relevant UserEmail -->
+<ng-container *ngIf="itemChecker().length != 0; else showImg">
+  <div class="mainTable container mt-3">
+    <table class="table table-striped table-hover table-bordered T">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">
+            <i class="fa-solid fa-check text-success"></i>
+          </th>
+          <th scope="col" class="text-center">#</th>
+          <th scope="col" class="text-center w-50">שם המוצר</th>
+          <th scope="col" class="text-center">בצע שינוי</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{
+          resetIretatorIncrement()
+        }}
+        <tr *ngFor="let item of items; index as i">
+          <ng-container *ngIf="returnSessionDataInfo() == item.userEmail">
+            <td class="text-center">
+              <input type="checkbox" (change)="change($event)" />
+            </td>
+            <td class="text-center">{{ iretatorIncrement() }}</td>
+            <td class="text-center">{{ item.item }}</td>
+
+            <td class="text-center flexdiv">
+              <button
+                (click)="updateItem(item)"
+                class="btn btn-size btn-secondary"
+              >
+                <i class="fa-solid small fa-pen-to-square"></i>
+                <span class="hidden"> ערוך </span>
+              </button>
+              <button
+                (click)="deleteItem(item)"
+                class="btn btn-size btn-danger"
+              >
+                <i class="fa-solid fa-trash-can"></i>
+                <span class="hidden"> מחק</span>
+              </button>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="reset">
+    <button
+      (click)="deleteAll()"
+      class="btn btn-secondary reset-btn btn-sm mt-3 mb-4"
+    >
+      <i class="fa-solid fa-rotate"></i> אפס רשימה
+    </button>
+  </div>
+</ng-container>
+<ng-template #showImg>
+  <h3 class="text-center message">רשימת הקניות שלך ריקה...</h3>
+  <div class="img">
+    <img
+      class="image-class img-fluid"
+      src="../../../assets/img/list.png"
+      alt="Image"
+    />
+  </div>
+</ng-template>
+<!-- <app-footer class="fixed-bottom"></app-footer> -->

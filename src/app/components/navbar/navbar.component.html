@@ -1,0 +1,35 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-light">
+  <div class="container">
+    <a class="navbar-brand">
+      <i class="fa-solid fa-list-check"></i> רשימת קניות
+      <span class="version">V2.0</span></a
+    >
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ getUserName() }}
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" (click)="logout()"
+                >התנתק <i class="fa-solid fa-arrow-right-from-bracket"></i
+              ></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <span class="text-white mobileLogout"
+      ><a class="mobileLogout" (click)="logout()"
+        >התנתק <i class="fa-solid fa-arrow-right-from-bracket"></i></a
+    ></span>
+  </div>
+</nav>

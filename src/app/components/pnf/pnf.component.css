@@ -1,0 +1,26 @@
+.pnf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  margin: 4rem 0 0 0;
+  width: 40rem;
+}
+
+.message {
+  color: grey;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+}
+
+/* @media only screen and (max-width: 767px) {
+  .image {
+    width: 80%;
+    margin: 10rem 0 0 0;
+  }
+} */
