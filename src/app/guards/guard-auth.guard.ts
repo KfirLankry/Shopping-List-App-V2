@@ -22,8 +22,8 @@ export class GuardAuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    // Checks if SessionStorage is true and returns true
-    if (this.as.getSessionData('isLoggedIn') == 'true') return true;
+    // Checks if LocalStorage is true and returns true
+    if (this.as.getLocalData('isLoggedIn') == 'true') return true;
     else {
       // If not, it navigates to Login page and return false
       alert('Youre not allowed to access this url');
