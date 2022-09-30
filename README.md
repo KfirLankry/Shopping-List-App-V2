@@ -17,8 +17,17 @@ Grocery Shopping List is the most easy way to organise your shopping lists. It i
 
 ## More Info:
 
-Development Field: Fullstack
-Live Web: https://grocery-list-app-a6a59.web.app/login
+Development Field: Fullstack  
+Live Web: https://grocery-list-app-a6a59.web.app/  
 Version: 2.0.0  
 App Language: Hebrew  
 Author: Kfir Lankry
+***
+to Install all dependencies:  
+```
+npm i
+```
+to run the project:  
+```
+ng serve -o
+```
