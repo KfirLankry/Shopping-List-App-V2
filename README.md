@@ -30,4 +30,9 @@ npm i
 to run the project:  
 ```
 ng serve -o
-```
+```  
+## Screenshots:  
+![alt text](https://i.ibb.co/C23pL2D/shooping2.jpg?raw=true) 
+***
+![alt text](https://i.ibb.co/824j3rX/shooping1.jpg?raw=true)  
+***
