@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {}
 
   getUserName(): string {
-    return this.as.getLocalData('email');
+    return this.as.getSessionData('email');
   }
 
   logout(): void {

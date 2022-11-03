@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
     this.as
       .login(this.user)
       .then((data) => {
-        this.as.setLocalData('email', data.user.email as string);
-        this.as.setLocalData('isLoggedIn', 'true');
+        this.as.setSessionData('email', data.user.email as string);
+        this.as.setSessionData('isLoggedIn', 'true');
         this.router.navigateByUrl('home');
       })
       .catch((err) => {
@@ -44,8 +44,8 @@ export class LoginComponent implements OnInit {
     this.as
       .loginWithGoogle()
       .then((data) => {
-        this.as.setLocalData('email', data.user.displayName as string);
-        this.as.setLocalData('isLoggedIn', 'true');
+        this.as.setSessionData('email', data.user.displayName as string);
+        this.as.setSessionData('isLoggedIn', 'true');
         this.toastr.success('נכנסת למערכת בהצלחה!', 'הודעה מערכת', {
           progressBar: true,
           closeButton: true,
